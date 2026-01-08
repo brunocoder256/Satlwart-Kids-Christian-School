@@ -1,0 +1,316 @@
+/* HERO */
+.hero {
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,105,180,0.55),
+    rgba(255,255,255,0.85)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-content h1 {
+  color: #c2185b;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+}
+
+/* SECTIONS */
+.home-section {
+  padding: 4rem 1.5rem;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.soft-bg {
+  background: linear-gradient(135deg, #ffe6ec, #fff);
+}
+
+/* PREVIEWS */
+.preview-grid,
+.events-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* EVENT CARD */
+.event-mini {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.event-mini img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.event-mini div {
+  padding: 1rem;
+}
+
+/* ANIMATION */
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===============================
+   HOME PAGE BUTTONS
+================================ */
+
+.btn-primary,
+.link-more {
+  display: inline-block;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #ff4f8b,
+    #c2185b
+  );
+  box-shadow: 0 8px 20px rgba(194, 24, 91, 0.35);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover,
+.link-more:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(194, 24, 91, 0.45);
+  background: linear-gradient(
+    135deg,
+    #c2185b,
+    #ff4f8b
+  );
+}
+
+.btn-primary:active,
+.link-more:active {
+  transform: translateY(0);
+}
+
+/* spacing fix when used in sections */
+.home-section .link-more {
+  margin-top: 1.5rem;
+}
+
+/* ===============================
+   HOME CONTACT SECTION
+================================ */
+
+.contact-text {
+  max-width: 650px;
+  margin: 0.8rem auto 2rem;
+  color: #555;
+}
+
+.home-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.home-contact-info {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.home-contact-info p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.home-map {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.home-map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .home-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-contact-info {
+    text-align: center;
+  }
+}
+
+/* ================================
+   TRUST INDICATORS
+================================ */
+
+.trust-section {
+  background: linear-gradient(180deg, #fff, #fff6f9);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2rem;
+}
+
+.trust-card {
+  background: #fff;
+  padding: 2.2rem 1.8rem;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 35px rgba(255, 77, 121, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.trust-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(255, 77, 121, 0.22);
+}
+
+.trust-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff4d79, #ff7a9c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.trust-card h3 {
+  color: #c2185b;
+  margin-bottom: 0.6rem;
+}
+
+.trust-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ================================
+   WHY CHOOSE US
+================================ */
+
+.why-section {
+  background: linear-gradient(135deg, #ffe6ec, #ffffff);
+}
+
+.why-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.why-text h2 {
+  color: #c2185b;
+  margin-bottom: 0.8rem;
+}
+
+.why-intro {
+  font-size: 1rem;
+  color: #555;
+  max-width: 520px;
+  margin-bottom: 1.5rem;
+}
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.why-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.why-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #ff4d79;
+  font-weight: bold;
+}
+
+.why-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.why-card {
+  background: #fff;
+  padding: 2.4rem;
+  border-radius: 20px;
+  max-width: 380px;
+  box-shadow: 0 18px 45px rgba(255, 77, 121, 0.18);
+}
+
+.why-card h4 {
+  color: #c2185b;
+  margin-bottom: 0.6rem;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (min-width: 768px) {
+  .why-wrapper {
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}

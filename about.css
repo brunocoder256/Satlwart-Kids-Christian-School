@@ -1,0 +1,33 @@
+.page-hero {
+  background: var(--gradient-soft);
+  padding: var(--space-8) 0;
+}
+
+.page-hero h1 {
+  color: var(--pink-400);
+  font-size: var(--fs-xxl);
+}
+
+.about-intro img,
+#about-image {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.card {
+  background: var(--white);
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.values .value-item {
+  background: var(--bg-soft);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.values h4 {
+  color: var(--pink-400);
+}

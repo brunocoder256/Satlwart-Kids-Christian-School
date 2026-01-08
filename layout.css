@@ -1,0 +1,251 @@
+/* ================================
+   GLOBAL LAYOUT & RESPONSIVENESS
+   (LOCKED — DO NOT TOUCH AGAIN)
+================================ */
+
+/* ---------- CONTAINER ---------- */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+/* ---------- SECTIONS ---------- */
+section {
+  padding: var(--space-7) 0;
+}
+
+/* ================================
+   HEADER & NAVIGATION
+================================ */
+
+/* ---------- HEADER ---------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background: var(--white);
+  z-index: 1000;
+  box-shadow: var(--shadow-sm);
+}
+
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ---------- LOGO ---------- */
+.nav-logo {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  color: var(--pink-400);
+}
+
+/* ---------- HAMBURGER ---------- */
+.menu-toggle {
+  width: 32px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 100%;
+  background: var(--pink-400);
+  border-radius: 2px;
+  transition: all 0.35s ease;
+}
+
+/* ---------- HAMBURGER ANIMATION ---------- */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ---------- MOBILE NAV (DEFAULT) ---------- */
+.nav-links {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+  transform: translateY(-120%);
+  transition: transform 0.35s ease;
+  box-shadow: var(--shadow-md);
+  z-index: 999;
+}
+
+.nav-links a {
+  font-size: var(--fs-lg);
+  font-weight: 500;
+  padding: var(--space-3) 0;
+}
+
+/* ---------- MOBILE NAV OPEN ---------- */
+.nav-links.open {
+  transform: translateY(0);
+}
+
+/* ---------- LOCK SCROLL ---------- */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.site-footer {
+  background: linear-gradient(135deg, #ffe6ec, #ffffff);
+  margin-top: 4rem;
+  color: #444;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 3rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2rem;
+}
+
+.footer-brand h3 {
+  color: #c2185b;
+  margin-bottom: 0.8rem;
+}
+
+.footer-brand p {
+  line-height: 1.6;
+  max-width: 420px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+  margin-bottom: 0.8rem;
+  color: #222;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: #444;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #c2185b;
+}
+
+.footer-contact p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem;
+  background: #f8f8f8;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* ================================
+   GRID SYSTEM
+================================ */
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-2 {
+  grid-template-columns: 1fr;
+}
+
+.grid-3 {
+  grid-template-columns: 1fr;
+}
+
+/* ================================
+   DESKTOP OVERRIDES
+================================ */
+
+@media (min-width: 768px) {
+  header {
+    height: 80px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: var(--space-6);
+  }
+
+  .nav-links a {
+    font-size: var(--fs-base);
+    padding: 0;
+  }
+
+  section {
+    padding: var(--space-8) 0;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ================================
+   FOOTER MOBILE
+================================ */
+
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: auto;
+  }
+}

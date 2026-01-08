@@ -1,0 +1,164 @@
+/* ================================
+   ADMISSIONS PAGE
+================================ */
+
+/* ---------- HERO ---------- */
+.hero-admissions {
+  position: relative;
+  background:
+    linear-gradient(
+      rgba(255, 77, 121, 0.75),
+      rgba(255, 77, 121, 0.65)
+    ),
+    url("https://images.unsplash.com/photo-1600596542815-ffad4c1539a9");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 6rem 0 5rem;
+  text-align: center;
+}
+
+.hero-admissions h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 0.8rem;
+}
+
+.hero-admissions p {
+  max-width: 680px;
+  margin: auto;
+  font-size: 1.05rem;
+  opacity: 0.95;
+}
+
+/* ---------- INFO GRID ---------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.info-grid div {
+  background: linear-gradient(180deg, #fff, #fff8fa);
+  padding: 2.2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(255, 77, 121, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.info-grid div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(255, 77, 121, 0.2);
+}
+
+.info-grid h3 {
+  color: var(--pink-500);
+  margin-bottom: 0.8rem;
+  font-size: 1.15rem;
+}
+
+.info-grid p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ---------- REQUIREMENTS ---------- */
+.requirements-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.4rem;
+  margin-top: 1.5rem;
+}
+
+.requirements-list li {
+  background: #fff;
+  padding: 1.2rem 1.4rem;
+  border-left: 5px solid var(--pink-400);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+}
+
+.requirements-list li::before {
+  content: "✓";
+  position: absolute;
+  left: -1.8rem;
+  top: 1.2rem;
+  color: var(--pink-400);
+  font-weight: bold;
+}
+
+/* ---------- FEES TABLE ---------- */
+.fees-table {
+  overflow-x: auto;
+  margin-top: 2rem;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+
+.fees-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.fees-table th,
+.fees-table td {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.fees-table th {
+  background: linear-gradient(
+    135deg,
+    var(--pink-100),
+    var(--pink-200)
+  );
+  color: #7a0034;
+  font-weight: 600;
+}
+
+.fees-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- APPLY SECTION ---------- */
+.section-apply {
+  margin-top: 4rem;
+}
+
+.section-apply h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--pink-500);
+}
+
+.section-apply iframe {
+  width: 100%;
+  min-height: 820px;
+  border-radius: var(--radius);
+  background: #fff;
+  box-shadow: 0 15px 40px rgba(255, 77, 121, 0.15);
+  border: none;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 600px) {
+  .hero-admissions {
+    padding: 5rem 1rem 4rem;
+  }
+
+  .requirements-list li::before {
+    display: none;
+  }
+
+  .section-apply iframe {
+    min-height: 900px;
+  }
+}
